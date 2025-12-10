@@ -39,9 +39,9 @@ const items = [
   },
 ];
 
-export default function Platos() {
+export default function Outline() {
   return (
-    <Accordion className="w-full max-w-md">
+    <Accordion className="w-full max-w-full" variant="">
       {items.map((item, index) => (
         <Accordion.Item key={index}>
           <Accordion.Heading>
