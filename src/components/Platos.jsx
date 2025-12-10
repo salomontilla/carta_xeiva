@@ -45,7 +45,7 @@ export default function Outline() {
       {items.map((item, index) => (
         <Accordion.Item key={index}>
           <Accordion.Heading>
-            <Accordion.Trigger>
+            <Accordion.Trigger className="">
               {item.icon ? (
                 <Icon className="text-muted mr-3 size-4 shrink-0" icon={item.icon} />
               ) : null}
