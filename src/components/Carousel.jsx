@@ -11,13 +11,13 @@ export default function Carousel() {
     },
     {
       img: "/src/assets/decoracion_4.webp",
-      text: "Espacios Amplios y Cómodos",
-      description: "Contamos con grandes espacios para que puedas disfrutar de tus comidas.",
+      text: "Espacios acogedores",
+      
     },
     {
       img: "/src/assets/xeiva_paisaje_1.webp",
       text: "Zonas verdes",
-      description: "Zonas para disfrutar de la naturaleza",
+      
     },
   ];
 
