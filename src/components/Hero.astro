@@ -3,55 +3,62 @@ import { Image } from 'astro:assets';
 import myImage from "../assets/xeiva_paisaje_3.webp";
 ---
 
-<section class="relative min-h-[calc(100vh-80px)] pt-[80px] flex items-center">
+<section class="relative min-h-[calc(100vh-80px)] pt-[80px] flex items-center overflow-hidden">
   
-  <!-- Background -->
+  <!-- Background Image -->
   <Image 
     src={myImage} 
     alt="Paisaje Xeiva Restaurante"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
-  <!-- Creative Color Overlay -->
-  <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-transparent"></div>
+  <!-- Warm rustic overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-red-900/50 via-black/40 to-black/70"></div>
 
-  <!-- Decorative accent -->
-  <div class="absolute top-20 right-20 w-32 h-32 rounded-full bg-white/10 blur-xl"></div>
+  <!-- Grain texture -->
+  <div class="absolute inset-0 bg-[url('/textures/grain.svg')] opacity-[0.2] mix-blend-overlay pointer-events-none"></div>
+
+  <!-- Rustic red glow accents -->
+  <div class="absolute top-20 left-16 w-40 h-40 bg-red-700/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 right-20 w-52 h-52 bg-red-900/25 rounded-full blur-2xl"></div>
 
   <!-- Content -->
-  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white flex flex-col items-center">
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white drop-shadow-xl">
     
-    <!-- Fancy Title -->
-    <h1 class="text-5xl md:text-7xl font-semibold leading-tight drop-shadow-xl">
+    <h1 class="text-5xl md:text-7xl font-semibold tracking-tight">
       Xeiva  
-      <span class="block font-light md:text-5xl text-4xl opacity-90 tracking-wide">
+      <span class="block font-light md:text-5xl text-4xl text-red-200/90 tracking-wide">
         Restaurante
       </span>
     </h1>
 
-    <!-- Creative tagline -->
-    <p class="mt-6 text-lg md:text-2xl text-white/85 max-w-2xl leading-relaxed px-4 py-2 ">
-      Sabores que cuentan historias.  
-      Inspirado en la tierra. Creado para tus sentidos.
+    <p class="mt-6 text-lg md:text-2xl text-white/85 leading-relaxed max-w-2xl mx-auto font-light">
+      Cocina con esencia, fuego y tradición.  
+      Sabores artesanales inspirados en nuestra tierra.
     </p>
 
-    <!-- Buttons -->
-    <div class="mt-10 flex flex-wrap justify-center gap-5">
-      <a 
+    {/* Rustic underline */}
+    <div class="mt-6 h-[3px] w-32 mx-auto bg-gradient-to-r from-red-600 via-red-400 to-red-600 rounded-full shadow-[0_2px_8px_rgba(255,0,0,0.35)]"></div>
+
+    {/* Buttons */}
+    <div class="mt-10 flex justify-center gap-5">
+      <a
         href="#menu"
-        class="px-7 py-3 rounded-xl bg-white/90 text-black font-medium text-sm tracking-wide 
-               backdrop-blur-md hover:bg-white transition-all"
+        class="px-7 py-3 rounded-xl bg-red-600 text-white font-medium text-sm tracking-wide 
+               shadow-lg shadow-red-900/30 hover:bg-red-500 transition-all"
       >
-        Explorar Menú
+        Ver Menú
       </a>
 
-      <a 
+      <a
         href="#reservas"
-        class="px-7 py-3 rounded-xl border border-white/60 text-white font-medium text-sm 
-               hover:bg-white/10 backdrop-blur-md transition-all"
+        class="px-7 py-3 rounded-xl border border-red-300 text-red-200 font-medium text-sm 
+               hover:bg-red-200/10 backdrop-blur-md transition-all"
       >
         Reservar
       </a>
     </div>
+
   </div>
+
 </section>
