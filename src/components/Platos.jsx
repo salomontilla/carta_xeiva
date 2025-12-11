@@ -6,12 +6,13 @@ const items = {
   tipicos_xeiva: [
     {
       nombre: "Carnes al horno Xeiva",
-      descripcion: "Carnes de res, pollo, cerdo asados al horno de leña",
-      precio: 29000,
+      descripcion: "Res, pollo y cerdo acompañados de papa salada, maduro melao, yuca y guacamole",
+      precio: 32000,
     },
     {
-      nombre: "Sancocho de gallina criolla por presa",
-      precio: 33000,
+      nombre: "Sancocho de gallina criolla",
+      descripcion:"Bandeja ",
+      precio: 35000,
     },
     {
       nombre: "Sancocho de gallina criolla entera",
@@ -37,41 +38,41 @@ const items = {
     },
     {
       nombre: "Churrasco",
-      descripcion: "Con papa salada, maduro meló y ensalada",
-      precio: 33000,
+      descripcion: "Con papa salada, maduro melao y ensalada",
+      precio: 35000,
     },
   ],
   carnes_cerdo: [
     {
       nombre: "Lomo de cerdo",
       descripcion: "Con papa salada, maduro meló y ensalada",
-      precio: 30000,
+      precio: 34000,
     },
     {
       nombre: "Lomo de cerdo en salsa hawaiana",
       descripcion: "Con papa a la francesa y arroz",
-      precio: 34000,
+      precio: 35000,
     },
     {
       nombre: "Lomo de cerdo campestre",
       descripcion:
         "Lomo de cerdo con lonchas de queso crema, hogao, maíz tierno, acompañado de patacones y arroz",
-      precio: 35000,
+      precio: 36000,
     },
     {
       nombre: "Lomo de cerdo en salsa de champiñones y tocineta",
       descripcion: "Con papa a la francesa y arroz",
-      precio: 35000,
+      precio: 36000,
     },
     {
       nombre: "Chuleta de cerdo",
       descripcion: "Con papa a la francesa y ensalada",
-      precio: 34000,
+      precio: 35000,
     },
     {
       nombre: "Lomo de cerdo salsa BBQ",
       descripcion: "Con papa a la francesa",
-      precio: 32000,
+      precio: 35000,
     },
   ],
   pollos: [
@@ -79,35 +80,35 @@ const items = {
       nombre: "Pechuga Xeiva",
       descripcion:
         "Con duraznos y banano meló bañados en crema de leche, acompañada de papa a la francesa y ensalada",
-      precio: 32000,
+      precio: 34000,
     },
     {
       nombre: "Pechuga en salsa de champiñones y tocineta",
       descripcion: "Con papa a la francesa y arroz",
-      precio: 33000,
+      precio: 35000,
     },
     {
       nombre: "Pechuga Montañera",
       descripcion:
         "Pechuga con lonchitas de queso crema, hogao, maíz tierno, acompañada con patacón y arroz",
-      precio: 34000,
+      precio: 35000,
     },
     {
       nombre: "Pechuga Napolitana",
       descripcion:
         "Pechuga de pollo con lonchitas de queso, rodajas de tomate, papa a la francesa y ensalada",
-      precio: 32000,
+      precio: 33000,
     },
     {
       nombre: "Pechuga Hawaiana",
       descripcion: "Papas a la francesa y arroz",
-      precio: 33000,
+      precio: 34000,
     },
     {
       nombre: "Milanesa de pollo",
       descripcion:
         "Filete de pechuga apanado acompañado de papa a la francesa y ensalada",
-      precio: 33000,
+      precio: 34000,
     },
   ],
   pescados: [
@@ -124,12 +125,12 @@ const items = {
     {
       nombre: "Trucha al ajillo",
       descripcion: "Con papa a la francesa y ensalada",
-      precio: 32000,
+      precio: 33000,
     },
     {
       nombre: "Mojarra dorada",
       descripcion: "Con patacón y ensalada",
-      precio: 29000,
+      precio: 34000,
     },
     {
       nombre: "Salmón dorado en salsa de la casa",
@@ -160,10 +161,11 @@ const items = {
     bebidas_generales: [
       { nombre: "Agua en botella", precio: 3000 },
       { nombre: "Gaseosa personal", precio: 4000 },
-      { nombre: "Gaseosa (1.5 L)", precio: 9000 },
-      { nombre: "Cerveza en lata (Aguila, Club, Corona)", precio: 5000 },
-      { nombre: "Copa Ginger (Cerezada)", precio: 3000 },
-      { nombre: "Limonada de coco (copa)", precio: 9000 },
+      { nombre: "Gaseosa (1.5 L)", precio: 8000 },
+      { nombre: "Cerveza en lata (Aguila, Club)", precio: 5000 },
+      { nombre: "Copa Ginger (Cerezada)", precio: 8000 },
+      { nombre: "Limonada de coco (copa)", precio: 10000 },
+      { nombre: "Limonada Cerezada (copa)", precio: 8000 },
       { nombre: "Soda de frutos silvestres rojos", precio: 10000 },
       { nombre: "Soda de frutos tropicales amarillos", precio: 10000 },
     ],
@@ -199,9 +201,9 @@ const categoryIcons = {
 
 const categoryTitles = {
   tipicos_xeiva: "Típicos Xeiva",
-  carnes_res: "Carnes de Res",
-  carnes_cerdo: "Carnes de Cerdo",
-  pollos: "Pollos",
+  carnes_res: "Res",
+  carnes_cerdo: "Cerdo",
+  pollos: "Pollo",
   pescados: "Pescados",
   bebidas: "Bebidas",
   postres: "Postres $8.000",
