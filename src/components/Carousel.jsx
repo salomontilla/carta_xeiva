@@ -5,17 +5,17 @@ export default function Carousel() {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
   const slides = [
     {
-      img: "/src/assets/xeiva_paisaje_2.webp",
-      text: "Ambiente Familiar",
-      description: "Disfruta de un ambiente acogedor y familiar.",
+      img: "/src/assets/decoracion_3.webp",
+      text: "Salon de eventos",
+      description: "",
     },
     {
-      img: "/src/assets/xeiva_paisaje_1.webp",
+      img: "/src/assets/decoracion_4.webp",
       text: "Espacios Amplios y Cómodos",
       description: "Contamos con grandes espacios para que puedas disfrutar de tus comidas.",
     },
     {
-      img: "/src/assets/xeiva_paisaje_3.webp",
+      img: "/src/assets/xeiva_paisaje_1.webp",
       text: "Zonas verdes",
       description: "Zonas para disfrutar de la naturaleza",
     },
