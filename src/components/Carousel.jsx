@@ -5,64 +5,59 @@ export default function Carousel() {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
   const slides = [
     {
-      img: "/src/assets/xeiva_paisaje_1.webp",
+      img: "/src/assets/xeiva_paisaje_2.webp",
       text: "Ambiente Familiar",
+      description: "Disfruta de un ambiente acogedor y familiar.",
     },
     {
-      img: "/src/assets/xeiva_paisaje_2.webp",
+      img: "/src/assets/xeiva_paisaje_1.webp",
       text: "Espacios Amplios y Cómodos",
+      description: "Contamos con grandes espacios para que puedas disfrutar de tus comidas.",
     },
     {
       img: "/src/assets/xeiva_paisaje_3.webp",
-      text: "Cocina Tradicional",
+      text: "Zonas verdes",
+      description: "Zonas para disfrutar de la naturaleza",
     },
   ];
 
   return (
-    <section className="py-20 px-6 bg-[#faf5f3]">
-      <h2 className="text-4xl md:text-5xl font-semibold text-center text-red-900 mb-12">
-        Instalaciones
-      </h2>
+    <section className="w-full py-14 bg-red-50">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Title */}
+        <h2 className="text-center text-4xl font-extrabold tracking-tight mb-10 text-red-800">
+          Vive una experienca única
+        </h2>
 
-      <div
-        className="overflow-hidden max-w-5xl mx-auto rounded-xl shadow-lg"
-        ref={emblaRef}
-      >
-        <div className="flex">
-          {slides.map((slide, i) => (
-            <div
-              key={i}
-              className="relative flex-[0_0_100%] min-w-0 h-[350px] group overflow-hidden"
-            >
-              {/* Imagen */}
-              <img
-                src={slide.img}
-                alt={slide.text}
-                className="w-full h-full object-cover transition duration-300 group-hover:opacity-60"
-              />
-
-              {/* Texto Sobre Imagen */}
+        {/* Carousel */}
+        <div className="overflow-hidden rounded-2xl shadow-2xl " ref={emblaRef}>
+          <div className="flex">
+            {slides.map((item, index) => (
               <div
-                className="
-      absolute bottom-0 left-0 right-0 
-      opacity-0 group-hover:opacity-100
-      transition duration-300
-      px-6 py-4
-      text-left
-    "
+                key={index}
+                className="flex-[0_0_100%] relative group min-w-0 h-[420px] md:h-[500px]"
               >
-                <p
-                  className="
-        text-white text-xl font-semibold
-        bg-black/40 backdrop-blur-sm
-        inline-block px-4 py-2 rounded-t-xl
-      "
+                {/* Imagen */}
+                <img
+                  src={item.img}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt={item.text}
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-red-900/70 to-transparent transition-opacity duration-500 group-hover:from-red-900/80 group-hover:to-red-900/20"></div>
+
+                {/* Texto encima */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end
+                text-white p-8 opacity-0 sm:group-hover:opacity-100 opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0"
                 >
-                  {slide.text}
-                </p>
+                  <h3 className="text-4xl font-bold mb-3 text-red-100 drop-shadow-lg">{item.text}</h3>
+                   <p className="text-lg text-center max-w-md text-red-50">{item.description}</p> 
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
