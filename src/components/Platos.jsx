@@ -161,10 +161,9 @@ const items = {
       { nombre: "Agua en botella", precio: 3000 },
       { nombre: "Gaseosa personal", precio: 4000 },
       { nombre: "Gaseosa (1.5 L)", precio: 9000 },
-      { nombre: "Cerveza en lata", precio: 5000 },
+      { nombre: "Cerveza en lata (Aguila, Club, Corona)", precio: 5000 },
       { nombre: "Copa Ginger (Cerezada)", precio: 3000 },
       { nombre: "Limonada de coco (copa)", precio: 9000 },
-      { nombre: "Limonada en jarra", precio: 10000 },
       { nombre: "Soda de frutos silvestres rojos", precio: 10000 },
       { nombre: "Soda de frutos tropicales amarillos", precio: 10000 },
     ],
@@ -172,18 +171,106 @@ const items = {
   postres: [
     "Leche asada",
     "Durazno",
-    "Fresa",
     "Milo",
     "Oreo",
     "Maracuyá",
     "Limón",
-    "Postres fitness (limón y frutos rojos)",
+    "Frutos Rojos",
   ],
   por_porcion: [
     { nombre: "Papa a la francesa", precio: 7000 },
     { nombre: "Patacón", precio: 5000 },
     { nombre: "Arroz", precio: 3000 },
   ],
+};
+
+const categoryIcons = {
+  tipicos_xeiva: "mdi:pot-steam",
+  carnes_res: "mdi:cow",
+  carnes_cerdo: "mdi:pig",
+  pollos: "mdi:food-drumstick",
+  pescados: "mdi:fish",
+  bebidas: "mdi:glass-cocktail",
+  postres: "mdi:cupcake",
+  por_porcion: "mdi:food-variant",
+  jugos_tipicos_xeiva: "mdi:fruit-cherries",
+  bebidas_generales: "mdi:bottle-soda",
+};
+
+const categoryTitles = {
+  tipicos_xeiva: "Típicos Xeiva",
+  carnes_res: "Carnes de Res",
+  carnes_cerdo: "Carnes de Cerdo",
+  pollos: "Pollos",
+  pescados: "Pescados",
+  bebidas: "Bebidas",
+  postres: "Postres $8.000",
+  por_porcion: "Porciones",
+  jugos_tipicos_xeiva: "Jugos Típicos",
+  bebidas_generales: "Bebidas Generales",
+};
+
+const formatPrice = (price) => {
+  return new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    maximumFractionDigits: 0,
+  }).format(price);
+};
+
+const renderCategoryContent = (categoryKey, content) => {
+  if (Array.isArray(content)) {
+    return (
+      <ul className="space-y-4">
+        {content.map((item, idx) => {
+          if (typeof item === "string") {
+            return (
+              <li
+                key={idx}
+                className="flex justify-between items-center border-b border-red-900/10 pb-2 last:border-0"
+              >
+                <span className="font-medium">{item}</span>
+              </li>
+            );
+          }
+          return (
+            <li
+              key={idx}
+              className="flex flex-col border-b border-red-900/10 pb-3 last:border-0"
+            >
+              <div className="flex justify-between items-baseline">
+                <span className="font-semibold text-red-900">
+                  {item.nombre || item.tipo}
+                </span>
+                <span className="text-red-800 font-bold ml-4">
+                  {formatPrice(item.precio)}
+                </span>
+              </div>
+              {item.descripcion && (
+                <p className="text-sm text-red-900/70 mt-1 italic">
+                  {item.descripcion}
+                </p>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    );
+  } else if (typeof content === "object" && content !== null) {
+    return (
+      <div className="space-y-6">
+        {Object.entries(content).map(([subKey, subContent]) => (
+          <div key={subKey}>
+            <h4 className="font-semibold text-lg text-red-800 mb-3 ml-2 border-l-4 border-red-300 pl-2">
+              {categoryTitles[subKey] || subKey}
+            </h4>
+            {renderCategoryContent(subKey, subContent)}
+          </div>
+        ))}
+      </div>
+    );
+  }
+  return null;
 };
 
 export default function Platos() {
@@ -212,7 +299,7 @@ export default function Platos() {
 
       {/* Accordion Container */}
       <div className="relative z-10 flex justify-center">
-        <Accordion
+        <Accordion allowsMultipleExpanded 
           className="
     w-full max-w-lg 
     rounded-xl 
@@ -220,7 +307,7 @@ export default function Platos() {
     shadow-lg 
   "
         >
-          {items.map((item, index) => (
+          {Object.entries(items).map(([key, content], index) => (
             <Accordion.Item key={index}>
               <Accordion.Heading>
                 <Accordion.Trigger
@@ -235,14 +322,12 @@ export default function Platos() {
                 flex items-center
               "
                 >
-                  {item.icon ? (
-                    <Icon
-                      className="mr-3 size-5 text-red-600 shrink-0"
-                      icon={item.icon}
-                    />
-                  ) : null}
+                  <Icon
+                    className="mr-3 size-6 text-red-600 shrink-0"
+                    icon={categoryIcons[key] || "mdi:silverware-fork-knife"}
+                  />
 
-                  {item.title}
+                  {categoryTitles[key] || key}
 
                   <Accordion.Indicator>
                     <Icon
@@ -255,7 +340,7 @@ export default function Platos() {
 
               <Accordion.Panel>
                 <Accordion.Body className="text-red-900/80 leading-relaxed">
-                  {item.content}
+                  {renderCategoryContent(key, content)}
                 </Accordion.Body>
               </Accordion.Panel>
             </Accordion.Item>
