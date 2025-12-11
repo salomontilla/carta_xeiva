@@ -1,6 +1,6 @@
 export default function Platos() {
     return (
-        <header>
+        <header id="menu">
             <h1>Platos</h1>
         </header>
     );

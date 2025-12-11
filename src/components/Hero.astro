@@ -1,1 +1,57 @@
-<h1>Hero</h1>
+---
+import { Image } from 'astro:assets';
+import myImage from "../assets/xeiva_paisaje_3.webp";
+---
+
+<section class="relative min-h-[calc(100vh-80px)] pt-[80px] flex items-center">
+  
+  <!-- Background -->
+  <Image 
+    src={myImage} 
+    alt="Paisaje Xeiva Restaurante"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- Creative Color Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-transparent"></div>
+
+  <!-- Decorative accent -->
+  <div class="absolute top-20 right-20 w-32 h-32 rounded-full bg-white/10 blur-xl"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white flex flex-col items-center">
+    
+    <!-- Fancy Title -->
+    <h1 class="text-5xl md:text-7xl font-semibold leading-tight drop-shadow-xl">
+      Xeiva  
+      <span class="block font-light md:text-5xl text-4xl opacity-90 tracking-wide">
+        Restaurante
+      </span>
+    </h1>
+
+    <!-- Creative tagline -->
+    <p class="mt-6 text-lg md:text-2xl text-white/85 max-w-2xl leading-relaxed px-4 py-2 ">
+      Sabores que cuentan historias.  
+      Inspirado en la tierra. Creado para tus sentidos.
+    </p>
+
+    <!-- Buttons -->
+    <div class="mt-10 flex flex-wrap justify-center gap-5">
+      <a 
+        href="#menu"
+        class="px-7 py-3 rounded-xl bg-white/90 text-black font-medium text-sm tracking-wide 
+               backdrop-blur-md hover:bg-white transition-all"
+      >
+        Explorar Menú
+      </a>
+
+      <a 
+        href="#reservas"
+        class="px-7 py-3 rounded-xl border border-white/60 text-white font-medium text-sm 
+               hover:bg-white/10 backdrop-blur-md transition-all"
+      >
+        Reservar
+      </a>
+    </div>
+  </div>
+</section>
