@@ -1,13 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import Platos from "../components/Platos.jsx";
-import Footer from "../components/Footer.astro";
+import Footer from "../components/Footer.jsx";
 ---
 
 <Layout>
   <Hero/>
   <Platos client:load/>
-  <Footer/>
+  <Footer client:load />
 </Layout>
