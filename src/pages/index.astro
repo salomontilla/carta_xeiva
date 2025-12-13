@@ -4,11 +4,13 @@ import Hero from "../components/Hero.astro";
 import Platos from "../components/Platos.jsx";
 import Footer from "../components/Footer.jsx";
 import Carousel from "../components/Carousel.jsx";
+import Location from "../components/Location.astro";
 ---
 
 <Layout>
-  <Hero/>
-  <Platos client:load/>
-  <Carousel client:load/>
+  <Hero />
+  <Platos client:load />
+  <Carousel client:load />
+  <Location />
   <Footer client:load />
 </Layout>
