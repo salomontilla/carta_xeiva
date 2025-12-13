@@ -1,5 +1,6 @@
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import Reveal from "./Reveal";
 
 export default function Carousel() {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
@@ -22,8 +23,9 @@ export default function Carousel() {
   ];
 
   return (
-    <section className="w-full py-14 bg-red-50">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="w-full py-14 bg-amber-50">
+      <Reveal>
+        <div className="max-w-5xl mx-auto px-6">
         {/* Title */}
         <h2 className="text-center text-4xl font-extrabold tracking-tight mb-10 text-red-800">
           Vive una experienca única
@@ -60,6 +62,8 @@ export default function Carousel() {
           </div>
         </div>
       </div>
+      </Reveal>
+      
     </section>
   );
 }
