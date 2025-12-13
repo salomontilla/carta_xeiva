@@ -11,7 +11,7 @@ const items = {
     },
     {
       nombre: "Sancocho de gallina criolla",
-      descripcion:"Bandeja ",
+      descripcion:"Bandeja con 1/4 de gallina, arroz, yuca, platano, papa y una taza de sopa",
       precio: 35000,
     },
     {
