@@ -1,12 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import myImage from "../assets/xeiva_paisaje_3.webp";
+import Reveal from "./Reveal";
 ---
 
 <section class="relative min-h-screen pt-[80px] flex items-center overflow-hidden">
   
   <!-- Background Image -->
   <Image 
+    loading="eager"
     src={myImage} 
     alt="Paisaje Xeiva Restaurante"
     class="absolute inset-0 w-full h-full object-cover"
@@ -21,7 +23,7 @@ import myImage from "../assets/xeiva_paisaje_3.webp";
 
   <!-- Content -->
   <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white drop-shadow-xl">
-    
+    <Reveal client:load>
     <h1 class="text-5xl md:text-7xl font-semibold tracking-tight">
       Xeiva  
       <span class="block font-light md:text-5xl text-4xl text-red-200/90 tracking-wide">
@@ -48,7 +50,7 @@ import myImage from "../assets/xeiva_paisaje_3.webp";
       >
         Ver Menú
       </a>
-
+    
       <a
         href="#reservas"
         class="px-7 py-3 rounded-xl border border-red-300 text-red-200 font-medium text-sm 
@@ -56,6 +58,7 @@ import myImage from "../assets/xeiva_paisaje_3.webp";
       >
         Reservar
       </a>
+      </Reveal>
     </div>
 
   </div>

@@ -1,17 +1,20 @@
 "use client";
 import { Accordion } from "@heroui/react";
 import { Icon } from "@iconify/react";
+import Reveal from "./Reveal";
 
 const items = {
   tipicos_xeiva: [
     {
       nombre: "Carnes al horno Xeiva",
-      descripcion: "Res, pollo y cerdo acompañados de papa salada, maduro melao, yuca y guacamole",
+      descripcion:
+        "Res, pollo y cerdo acompañados de papa salada, maduro melao, yuca y guacamole",
       precio: 32000,
     },
     {
       nombre: "Sancocho de gallina criolla",
-      descripcion:"Bandeja con 1/4 de gallina, arroz, yuca, platano, papa y una taza de sopa",
+      descripcion:
+        "Bandeja con 1/4 de gallina, arroz, yuca, platano, papa y una taza de sopa",
       precio: 35000,
     },
     {
@@ -281,27 +284,27 @@ export default function Platos() {
       id="menu"
       className="relative py-20 px-6 bg-[#faf5f3] text-center overflow-hidden"
     >
-      {/* Decorative warm accents */}
-      <div className="absolute top-0 left-0 w-40 h-40 bg-red-900/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-52 h-52 bg-red-700/20 rounded-full blur-3xl"></div>
-
       {/* Title Section */}
       <div className="relative z-10 max-w-3xl mx-auto mb-16">
-        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-red-900">
-          Nuestros Platos
-        </h2>
-
+        <Reveal>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-red-900">
+            Nuestros Platos
+          </h2>
+        
         <p className="mt-3 text-red-900/80 text-lg md:text-xl font-light">
           Sabores hechos con tradición, fuego y autenticidad.
         </p>
-
+        
         {/* Rustic underline */}
+        
         <div className="mt-6 h-[3px] w-28 mx-auto bg-gradient-to-r from-red-700 via-red-500 to-red-700 rounded-full shadow-[0_2px_6px_rgba(255,0,0,0.25)]"></div>
+        </Reveal>
       </div>
 
       {/* Accordion Container */}
       <div className="relative z-10 flex justify-center">
-        <Accordion allowsMultipleExpanded 
+        <Accordion
+          allowsMultipleExpanded
           className="
     w-full max-w-lg 
     rounded-xl 
