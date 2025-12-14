@@ -6,17 +6,17 @@ export default function Carousel() {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
   const slides = [
     {
-      img: "/src/assets/decoracion_3.webp",
+      img: "/decoracion_3.webp",
       text: "Salon de eventos",
       description: "",
     },
     {
-      img: "/src/assets/decoracion_4.webp",
+      img: "/decoracion_4.webp",
       text: "Espacios acogedores",
       
     },
     {
-      img: "/src/assets/xeiva_paisaje_1.webp",
+      img: "/xeiva_paisaje_1.webp",
       text: "Zonas verdes",
       
     },
