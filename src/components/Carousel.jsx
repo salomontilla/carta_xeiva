@@ -2,25 +2,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Reveal from "./Reveal";
 
-export default function Carousel() {
+export default function Carousel({ slides }) {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
-  const slides = [
-    {
-      img: "/decoracion_3.webp",
-      text: "Salon de eventos",
-      description: "",
-    },
-    {
-      img: "/decoracion_4.webp",
-      text: "Espacios acogedores",
-      
-    },
-    {
-      img: "/xeiva_paisaje_1.webp",
-      text: "Zonas verdes",
-      
-    },
-  ];
 
   return (
     <section className="w-full py-14 bg-amber-50">
@@ -41,7 +24,10 @@ export default function Carousel() {
               >
                 {/* Imagen */}
                 <img
-                  src={item.img}
+                  src={item.img.src}
+                  width={item.img.width}
+                  height={item.img.height}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   alt={item.text}
                 />

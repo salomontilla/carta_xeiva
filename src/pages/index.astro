@@ -5,12 +5,32 @@ import Platos from "../components/Platos.jsx";
 import Footer from "../components/Footer.jsx";
 import Carousel from "../components/Carousel.jsx";
 import Location from "../components/Location.astro";
+import img1 from "../assets/decoracion_3.webp"
+import img2 from "../assets/decoracion_4.webp"
+import img3 from "../assets/xeiva_paisaje_1.webp"
+
+const slides = [
+  {
+    img: img1,
+    text: "Salon de eventos",
+  },
+  {
+    img: img2,
+    text: "Espacios acogedores",
+    
+  },
+  {
+    img: img3,
+    text: "Zonas verdes",
+    
+  },
+]
 ---
 
 <Layout>
   <Hero />
   <Platos client:load />
-  <Carousel client:load />
+  <Carousel slides={slides} client:load />
   <Location />
   <Footer client:load />
 </Layout>
