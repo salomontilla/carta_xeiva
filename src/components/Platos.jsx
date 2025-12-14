@@ -266,7 +266,7 @@ const renderCategoryContent = (categoryKey, content) => {
       <div className="space-y-6">
         {Object.entries(content).map(([subKey, subContent]) => (
           <div key={subKey}>
-            <h4 className="font-semibold text-lg text-red-800 mb-3 ml-2 border-l-4 border-red-300 pl-2">
+            <h4 className="font-semibold text-lg text-red-800 mb-3 ml-2 border-l-4 border-red-900 pl-2">
               {categoryTitles[subKey] || subKey}
             </h4>
             {renderCategoryContent(subKey, subContent)}
@@ -282,26 +282,23 @@ export default function Platos() {
   return (
     <div
       id="menu"
-      className="relative py-20 px-6 bg-[#faf5f3] text-center overflow-hidden"
+      className="relative py-20 px-6 bg-red-900 text-center overflow-hidden"
     >
       {/* Title Section */}
       <div className="relative z-10 max-w-3xl mx-auto mb-16">
         <Reveal>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-red-900">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-red-50">
             Nuestros Platos
           </h2>
-        
-        <p className="mt-3 text-red-900/80 text-lg md:text-xl font-light">
-          Sabores hechos con tradición, fuego y autenticidad.
-        </p>
-        
-        {/* Rustic underline */}
-        
-        <div className="mt-6 h-[3px] w-28 mx-auto bg-gradient-to-r from-red-700 via-red-500 to-red-700 rounded-full shadow-[0_2px_6px_rgba(255,0,0,0.25)]"></div>
+
+          {/* Rustic underline */}
+
+          <div className="mt-6 h-[2px] w-full mx-auto bg-gradient-to-r from-red-300 via-red-200 to-red-100 rounded-full shadow-[0_2px_6px_rgba(255,0,0,0.25)]"></div>
         </Reveal>
       </div>
 
       {/* Accordion Container */}
+      <Reveal>
       <div className="relative z-10 flex justify-center">
         <Accordion
           allowsMultipleExpanded
@@ -310,6 +307,7 @@ export default function Platos() {
     rounded-xl 
     p-4 
     shadow-lg 
+    bg-amber-50
   "
         >
           {Object.entries(items).map(([key, content], index) => (
@@ -317,7 +315,8 @@ export default function Platos() {
               <Accordion.Heading>
                 <Accordion.Trigger
                   className="
-                hover:bg-red-50/60 
+
+                hover:bg-white
                 rounded-lg 
                 p-8 
                 transition-all 
@@ -352,6 +351,7 @@ export default function Platos() {
           ))}
         </Accordion>
       </div>
+    </Reveal>
     </div>
   );
 }
