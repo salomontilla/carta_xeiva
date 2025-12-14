@@ -8,23 +8,31 @@ import Location from "../components/Location.astro";
 import img1 from "../assets/decoracion_3.webp"
 import img2 from "../assets/decoracion_4.webp"
 import img3 from "../assets/xeiva_paisaje_1.webp"
+import { getImage } from "astro:assets";
 
 const slides = [
   {
-    img: img1,
+    image: await getImage({
+      src: img1,
+      widths: [360, 480, 768, 1024],
+    }),
     text: "Salon de eventos",
   },
   {
-    img: img2,
+    image: await getImage({
+      src: img2,
+      widths: [360, 480, 768, 1024],
+    }),
     text: "Espacios acogedores",
-    
   },
   {
-    img: img3,
+    image: await getImage({
+      src: img3,
+      widths: [360, 480, 768, 1024],
+    }),
     text: "Zonas verdes",
-    
   },
-]
+];
 ---
 
 <Layout>

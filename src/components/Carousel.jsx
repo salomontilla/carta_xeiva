@@ -24,9 +24,10 @@ export default function Carousel({ slides }) {
               >
                 {/* Imagen */}
                 <img
-                  src={item.img.src}
-                  width={item.img.width}
-                  height={item.img.height}
+                  src={item.image.src}
+                  srcSet={item.image.srcSet}
+                  width={item.image.width}
+                  height={item.image.height}
                   loading="lazy"
                   sizes="(max-width: 768px) 90vw, 800px"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
