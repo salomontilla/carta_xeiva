@@ -28,6 +28,7 @@ export default function Carousel({ slides }) {
                   width={item.img.width}
                   height={item.img.height}
                   loading="lazy"
+                  sizes="(max-width: 768px) 90vw, 800px"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   alt={item.text}
                 />
