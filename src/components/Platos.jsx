@@ -48,7 +48,7 @@ const items = {
   carnes_cerdo: [
     {
       nombre: "Lomo de cerdo",
-      descripcion: "Con papa salada, maduro meló y ensalada",
+      descripcion: "Con papa salada, maduro melao y ensalada",
       precio: 34000,
     },
     {
@@ -82,7 +82,7 @@ const items = {
     {
       nombre: "Pechuga Xeiva",
       descripcion:
-        "Con duraznos y banano meló bañados en crema de leche, acompañada de papa a la francesa y ensalada",
+        "Con duraznos y banano melao bañados en crema de leche, acompañada de papa a la francesa y ensalada",
       precio: 34000,
     },
     {

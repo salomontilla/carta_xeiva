@@ -8,25 +8,24 @@ import Reveal from "./Reveal";
   
   <!-- Background Image -->
   <Image 
-    loading="eager"
     src={myImage} 
+    loading="eager"
+    fetchpriority="high"
+    width={1920}
+    height={1080}
     alt="Paisaje Xeiva Restaurante"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
   <!-- Warm rustic overlay -->
-  <div class="absolute inset-0 bg-gradient-to-b from-red-900/50 via-black/40 to-black/70"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/70"></div>
 
-  <!-- Rustic red glow accents -->
-  <div class="absolute top-20 left-16 w-40 h-40 bg-red-700/20 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-20 right-20 w-52 h-52 bg-red-900/25 rounded-full blur-2xl"></div>
 
   <!-- Content -->
   <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white drop-shadow-xl">
-    <Reveal client:load>
     <h1 class="text-5xl md:text-7xl font-semibold tracking-tight">
       Xeiva  
-      <span class="block font-light md:text-5xl text-4xl text-red-200/90 tracking-wide">
+      <span class="block font-light md:text-5xl text-4xl text-red-500/80 tracking-wide">
         Restaurante
       </span>
     </h1>
@@ -58,7 +57,6 @@ import Reveal from "./Reveal";
       >
         Mas Info
       </a>
-      </Reveal>
     </div>
 
   </div>
