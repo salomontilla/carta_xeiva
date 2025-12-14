@@ -29,8 +29,8 @@ const slides = [
 
 <Layout>
   <Hero />
-  <Platos client:load />
-  <Carousel slides={slides} client:load />
+  <Platos client:idle />
+  <Carousel slides={slides} client:idle />
   <Location />
-  <Footer client:load />
+  <Footer client:idle />
 </Layout>
